@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tienda en línea</title>
+        <meta charset="UTF-8">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <a class="logo nav-link" href="index.html">PATITO</a>
+                <ul>
+                    
+                    <a class="nav-link" href="comentarios.html">&Comentarios;</a>
+                    <a class="nav-link" href="carrito.html">&Carrito;</a>
+                    <a class="nav-link" href="nosotros.html">&Nosotros;</a>
+                    <a class="nav-link" href="cuenta.html">&Cuenta;</a>
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <h2 style="color: ">OPCIONES DE NAVEGACION</h2>
+            <br>
+            <nav>
+                <a class="nav-spec nav-link" href="index.html">PRINCIPAL</a><br>
+                <a class="nav-spec nav-link" href="camisas.html">CAMISAS</a>
+                <a class="nav-spec nav-link" href="pantalones.html">PANTALONES</a>
+                <a class="nav-spec nav-link" href="abrigos.html">ABRIGOS</a>
+            </nav>
+        </aside>
+        <section>
+            <h2 class="sublogo">Create una cuenta y recibe diferentes tipos de beneficios</h2>
+            <article>
+               
+                <form action="/usuario/registro" method="post">
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td class="sublogo">Usuario</td>
+                                <td><input type="email"
+                                           required="true"
+                                           name="usuario" value="" size="25" /></td>
+                            </tr>
+                            <tr>
+                                <td class="sublogo">Clave</td>
+                                <td><input type="password"
+                                           required="true"
+                                           name="clave" value="" size="20" /></td>
+                            </tr>
+                            <tr>
+                                <td class="sublogo">Nombre</td>
+                                <td><input type="text" 
+                                           required="true"
+                                           name="nombre" value="" size="40"/></td>
+                            </tr>
+                            <tr>
+                                <td class="sublogo">Edad</td>
+                                <td><input type="number"
+                                           required="true"
+                                           name="edad" value="" size="3" /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="Registrar" /></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </article>
+        </section>
+        <footer>
+            Derechos reservados 2023 &COPY;
+        </footer>
+    </body>
+</html>
