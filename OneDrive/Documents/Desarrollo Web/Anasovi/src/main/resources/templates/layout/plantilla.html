@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html  xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+       xmlns:th="http://www.thymeleaf.org">
     <head  th:fragment="head">
         <title>Anasovi</title>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/style.css}"/>
         <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -13,131 +14,77 @@
     </head>
     <body style="background-color: #FFEFEF;">
 
-    <div th:fragment="header">
-        <div class="col-lg-12">
-            <div style="background-color: #993955; width: 100%;" class="d-flex justify-content-center py-3">
-                <ul class="nav nav-pills" style="margin: 0px 40px;">
-                    <li class="nav-item"><a href="#" class="nav-link fw-bold" style="color: #0F0326;"
-                            aria-current="page">Principal</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Nosotros</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Noticias</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Eventos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Donaciones</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Informate</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <section style="background-color: #FFEFEF;" th:fragment="section">
-        <div style="padding-top: 50px;">
-            <figure style="text-align: center; margin: 0; border: none;">
-                <div style="display: inline-block;">
-                    <iframe width="1540" height="570" src="https://www.youtube.com/embed/1OX7BcPeG_s"
-                title="Anasovi ha ayudado a más de 500 pacientes con cáncer" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen style="margin: 0 auto;"></iframe>
-                </div>
-            </figure>
-
-        </div>
-    </section>
-
-    <main th:fragment="main" style="display: flex; background-color: #FFEFEF">
-
-
-        <aside style="width: 70%; margin-left: 180px; ">
-            <!-- Contenido del aside aquí -->
-            <h3 style="margin: 20px 0"> ¿Quiénes somos y que estamos haciendo?</h3>
-              <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 10px 0;">
-            <h4>Misión de nuestra página</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi orem ipsum dolor
-                sit amet, consectetur adipiscing elitation ullamco laboris nisiorem ipsum dolor sit amet,
-                consectetur adipiscing elitation ullamco laboris nisiorem ipsum dolor sit amet, consectetur
-                adipiscing elitation ullamco laboris nisi</p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-             <h4>Visión de nuestra página</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-            <h4>Nuestro objetivo</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-            <h4>Patologías que tratamos</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-            <h4>Nuestros servicios</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-            <h4>Cobertura</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-            <div style="background-color: white; border-radius: 20px; padding: 20px; margin: 20px 0;">
-            <h4>Servicios para pacientes</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitation ullamco laboris nisi </p>
-            </div>
-        </aside>
-        <aside style="width: 25%; margin-right: 180px;">
-            <h3 style="margin: 20px 0"> Nuestros servicios </h3>
-        </aside>
-    </main>
-        
-    <footer th:fragment="footer">
-
-        <div style="background-color: white;">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5  ">
-                <div class="col mb-3">
-                    <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                        <svg class="bi me-2" width="50" height="32">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                    </a>
-                    <p class="text-body-secondary">© ANASOVI 2023</p>
-                </div>
-
-                <div class="col mb-3">
-
-                </div>
-
-                <div class="col mb-3">
-                    <h5>Navegacion</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Principal</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Eventos</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Noticias</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Donaciones</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Nosotros</a></li>
-                    </ul>
-                </div>
-
-                <div class="col mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        <div th:fragment="header">
+            <div class="col-lg-12">
+                <div style="background-color: #993955; width: 100%;" class="d-flex justify-content-center py-3">
+                    <ul class="nav nav-pills" style="margin: 0px 40px;">
+                        <li class="nav-item"><a href="#" class="nav-link fw-bold" style="color: #0F0326;"aria-current="page">Principal</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Nosotros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Noticias</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Eventos</a></li>
+                        <li class="nav-item"><a th:href="@{/donacion/paginaDonacion}" class="nav-link  fw-bold" style="color: #0F0326;">Donaciones</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link  fw-bold" style="color: #0F0326;">Informate</a></li>
                     </ul>
                 </div>
             </div>
+
         </div>
-    </footer>
-</body>
+
+
+
+
+
+        <footer th:fragment="footer">
+
+            <div style="background-color: white;">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5  ">
+                    <div class="col mb-3">
+                        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                            <svg class="bi me-2" width="50" height="32">
+                                <use xlink:href="#bootstrap"></use>
+                            </svg>
+                        </a>
+                        <p class="text-body-secondary">© ANASOVI 2023</p>
+                    </div>
+
+                    <div class="col mb-3">
+
+                    </div>
+
+                    <div class="col mb-3">
+                        <h5>Navegacion</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Principal</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Eventos</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Noticias</a></li>
+                            <li class="nav-item mb-2"><a th:href="@{/donacion/paginaDonacion}" class="nav-link p-0 text-body-secondary">Donaciones</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Nosotros</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col mb-3">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col mb-3">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

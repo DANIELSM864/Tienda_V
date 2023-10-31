@@ -9,8 +9,11 @@
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
-        <section th:replace="~{layout/plantilla :: section}"/>
-        <main th:replace="~{layout/plantilla :: main}"/>
+        
+        <section th:replace="~{principal/fragmentos :: section}"/>
+        
+        <main th:replace="~{principal/fragmentos :: main}"/>
+        
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>
