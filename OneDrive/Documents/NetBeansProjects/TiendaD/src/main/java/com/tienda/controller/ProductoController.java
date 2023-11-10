@@ -2,6 +2,7 @@
 package com.tienda.controller;
 
 
+import com.tienda.domain.Categoria;
 import com.tienda.domain.Producto;
 import com.tienda.service.CategoriaService;
 import com.tienda.service.ProductoService;
@@ -31,7 +32,7 @@ public class ProductoController {
     
     @GetMapping("/listado")
     public String listado(Model model){
-        var productos= productoService.getProductos(false);
+        var productos = productoService.getProductos(false);
         model.addAttribute("productos",productos);
         model.addAttribute("totalProductos", productos.size());
         
@@ -62,6 +63,7 @@ public class ProductoController {
         productoService.save(producto);
         return "redirect:/producto/listado";
     }
+    
 
     @GetMapping("/eliminar/{idProducto}")
     public String productoEliminar(Producto producto) {
@@ -73,6 +75,8 @@ public class ProductoController {
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
         model.addAttribute("producto", producto);
+        var categorias= categoriaService.getCategorias(false);
+        model.addAttribute("categorias",categorias);
         return "/producto/modifica";
     }
     
