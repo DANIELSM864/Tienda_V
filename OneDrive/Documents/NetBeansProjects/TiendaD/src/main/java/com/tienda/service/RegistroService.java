@@ -11,7 +11,7 @@ public interface RegistroService {
 
     public Model crearUsuario(Model model, Usuario usuario) throws MessagingException;
     
-    public void activar(Usuario usuario, MultipartFile imagenFile);
+    public void activar(Usuario usuario,MultipartFile imagenFile);
     
     public Model recordarUsuario(Model model, Usuario usuario) throws MessagingException;
 }

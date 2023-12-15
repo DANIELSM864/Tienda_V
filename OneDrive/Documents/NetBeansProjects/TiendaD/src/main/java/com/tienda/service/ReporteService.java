@@ -15,6 +15,6 @@ public interface ReporteService {
     public ResponseEntity<Resource> generaReporte(
     String reporte,
             Map<String, Object> parametros,
-            String tipo) throws IOException; 
-    
+            String tipo
+    ) throws IOException;  
 }

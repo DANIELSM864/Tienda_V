@@ -25,54 +25,57 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
  */
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
-   
+
     @Bean
-    public LocaleResolver localeResolver(){
-       var slr = new SessionLocaleResolver();
-       slr.setDefaultLocale(Locale.getDefault());
-       slr.setTimeZoneAttributeName("session.current.locale");
-       slr.setTimeZoneAttributeName("session.current.timezone");
-       
-       return slr;
+    public LocaleResolver localeResolver() {
+        var slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(Locale.getDefault());
+        slr.setTimeZoneAttributeName("session.current.locale");
+        slr.setTimeZoneAttributeName("session.current.timezone");
+
+        return slr;
     }
+
     @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor(){
-        var lci = new LocaleChangeInterceptor ();
+    public LocaleChangeInterceptor localeChangeInterceptor() {
+        var lci = new LocaleChangeInterceptor();
         lci.setParamName("lang");
         return lci;
     }
+
     @Override
     public void addInterceptors(
-            InterceptorRegistry registro){
+            InterceptorRegistry registro) {
         registro.addInterceptor(
                 localeChangeInterceptor()
         );
-                
+
     }
-    /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
+
+    /* Los siguiente métodos son para implemen  tar el tema de seguridad dentro del proyecto */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
- }
+    }
 
-@Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((request) -> request
-                .requestMatchers("/","/index","/errores/**",
-                        "/carrito/**","/pruebas/**","/reportes/**",
-                        "/registro/**","/js/**","/webjars/**")
-                        .permitAll()
+                .requestMatchers("/", "/index", "/errores/**",
+                        "/carrito/**", "/pruebas/**", "/reportes/**",
+                        "/registro/**", "/js/**", "/webjars/**")
+                .permitAll()
                 .requestMatchers(
-                        "/producto/nuevo","/producto/guardar",
-                        "/producto/modificar/**","/producto/eliminar/**",
-                        "/categoria/nuevo","/categoria/guardar",
-                        "/categoria/modificar/**","/categoria/eliminar/**",
-                        "/usuario/nuevo","/usuario/guardar",
-                        "/usuario/modificar/**","/usuario/eliminar/**",
+                        "/producto/nuevo", "/producto/guardar",
+                        "/producto/modificar/**", "/producto/eliminar/**",
+                        "/categoria/nuevo", "/categoria/guardar",
+                        "/categoria/modificar/**", "/categoria/eliminar/**",
+                        "/usuario/nuevo", "/usuario/guardar",
+                        "/usuario/modificar/**", "/usuario/eliminar/**",
                         "/reportes/**",
                         "/reportes/productos"
                 ).hasRole("ADMIN")
@@ -90,9 +93,9 @@ public class ProjectConfig implements WebMvcConfigurer {
         return http.build();
     }
 
-/* El siguiente método se utiliza para completar la clase no es 
-    realmente funcional, la próxima semana se reemplaza con usuarios de BD */    
-   /* @Bean
+    /* El siguiente método se utiliza para completar la clase no es 
+    realmente funcional, la próxima semana se reemplaza con usuarios de BD */
+ /* @Bean
     public UserDetailsService users() {
         UserDetails admin = User.builder()
                 .username("juan")
@@ -111,7 +114,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .build();
         return new InMemoryUserDetailsManager(user, sales, admin);
     }*/
-     @Autowired
+    @Autowired
     private UserDetailsService userDetailsService;
 
     @Autowired
